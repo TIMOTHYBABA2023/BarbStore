@@ -1,25 +1,75 @@
-import logo from './logo.svg';
+// import React, { useState } from "react";
+// import './App.css';
+// import Homescreen from './components/herosection/Homescreen';
+// import Phonecategory from "./components/phonecategory/Phonecategory";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+
+// export default function App() {
+//     const [selectedProduct, setSelectedProduct] = useState(null);
+
+//     const handleProductSelect = (product) => {
+//         setSelectedProduct(product);
+//     };
+
+//     return (
+//         <div className="App">
+//             <Navbar />
+//             {!selectedProduct ? (
+//                 <Homescreen onProductSelect={handleProductSelect} />
+//             ) : (
+//                 <Phonecategory selectedProduct={selectedProduct} onProductSelect={handleProductSelect} />
+//             )}
+//             <Footer />
+//         </div>
+//     );
+// }
+
+import React, { useState } from "react";
 import './App.css';
+import Homescreen from './components/herosection/Homescreen';
+import Phonecategory from "./components/phonecategory/Phonecategory";
+import Shoppingcart from "./components/shoppingcart/Shoppingcart";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [cart, setCart] = useState([]);
+    const [view, setView] = useState("homescreen");
+
+    // Function to handle product selection from Homescreen
+    const handleProductSelect = (product) => {
+        setSelectedProduct(product);
+        setView("phonecategory"); // Navigate to Phonecategory after selecting product
+    };
+
+    // Function to handle product selection from Phonecategory
+    const handleProductClick = (product) => {
+        setSelectedProduct(product);
+        setCart([...cart, { ...product, quantity: 1 }]); // Add selected product to cart with initial quantity
+        setView("shoppingcart"); // Navigate to Shoppingcart after selecting product
+    };
+
+    // Function to reset selected product and view
+    const handleBackToHome = () => {
+        setSelectedProduct(null);
+        setView("homescreen"); // Navigate back to Homescreen
+    };
+
+    return (
+        <div className="App">
+            <Navbar />
+            {view === "homescreen" && (
+                <Homescreen onProductSelect={handleProductSelect} />
+            )}
+            {view === "phonecategory" && (
+                <Phonecategory selectedProduct={selectedProduct} onProductClick={handleProductClick} />
+            )}
+            {view === "shoppingcart" && (
+                <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} />
+            )}
+            <Footer />
+        </div>
+    );
 }
-
-export default App;
