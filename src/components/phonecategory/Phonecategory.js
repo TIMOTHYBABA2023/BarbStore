@@ -49,10 +49,10 @@ export default function Phonecategory({ selectedProduct, onProductClick }) {
                 <div><img src="" alt="" /></div>
                 <div>2</div>
             </div>
-        </div>
-        <div className="demo">
-            <Demo />
-        </div>
+            </div>
+            <div className="demo">
+                <Demo />
+            </div>
             <div className="category-products">
                 {displayProducts.map(product => (
                     <div key={product.id} className="product-item" onClick={() => onProductClick(product)}>

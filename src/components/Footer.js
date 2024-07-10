@@ -35,7 +35,7 @@ export default function Footer(){
                                 </div>
                                 
                             </div>
-                        </div>
+                    </div>
                         <div className="company">
                             <h2>Company</h2>
                             <div>

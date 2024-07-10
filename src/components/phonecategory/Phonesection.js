@@ -12,9 +12,9 @@ export default function Phonesection(){
                             <input type="text" placeholder="Search Products" />
                             <button >Search</button>
                         </div>
-                    <div className="phonesection--container">
-            </div>
-            </div>
+                        <div className="phonesection--container">
+                        </div>
+                    </div>
                 </div>            
             </div>
         </div>        

@@ -5,9 +5,9 @@ export default function Navbar(){
     return (
         <div className="navbar"> 
             <div className="navbar--div">
-                <div className="navbar--img">
-                    <img  src={logo} alt="Logo" />
-                </div>
+                    <div className="navbar--img">
+                        <img  src={logo} alt="Logo" />
+                    </div>
                     <div className="nav--text">
                         <p>Home</p>
                         <p>Products</p>
@@ -15,7 +15,6 @@ export default function Navbar(){
                     </div>
                     <div className="nav--button"><button >Buy Now</button></div>
             </div>
-
         </div>
        
     )

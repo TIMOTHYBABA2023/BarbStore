@@ -8,15 +8,10 @@
 }
 
 .App {
-  display: flex;
-  flex-flow: column wrap;
   width: 100%;
 }
 
-
-.homescreen {
-  display: flex;
-  flex-flow: column wrap;
+.mid--section {
   width: 100%;
 }
 
@@ -29,44 +24,47 @@
 .navbar {
   display: flex;
   flex-flow: row wrap;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
   padding: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  
 }
 
 .navbar--div {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  justify-content: space-around;
+  width: 90%;
 }
 
- .footer--media img{
-  width: 40px;
-  background-color: white;
-  margin: 5px;
+.navbar--div img {
+  width: 16%;
 }
 
-.navbar img {
-  flex: 1;
-  width: 40px;
-  margin: 20px 40px;
-}
 
-.nav--text {
+
+ .navbar--img { 
+  flex: 1; 
+  margin: 20px 40px; 
+}  
+
+ .nav--text {
   flex: 2;
   display: flex;
   align-items: center;
   justify-content: space-around;
   
-}
+} 
 
 
  .nav--button {
   flex: 1;
+  flex-shrink: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
  .nav--button button, .search--div button{
@@ -280,6 +278,12 @@
   align-items: center;
 }
 
+.footer--media img{
+  width: 40px;
+  background-color: white;
+  margin: 5px;
+}
+
 .footer--media span{
   color: #9A28DF;
   font-family: Signika Negative SC;
@@ -338,9 +342,9 @@
 
 /* Phone Category Section */
 
-.homecategory {
+/* .homecategory {
   display: block;
-}
+} */
 
 .phonecategory {
   width: 100%;
@@ -365,30 +369,38 @@
   align-items: center;
 }
 
-.phonesection--container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .phonesection--div1 {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   color: white;
-  width: 100%;
+}
+
+.search--div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .phonesection--div1 h1{
-  font-size: 8rem;
+  font-size: 8em;
 }
 
 .phonesection--div1 input{
   background-color: transparent;
   border: 1px solid white;
+  width: 60%;
 }
+
+.category-products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .phonecatalog {
   display: flex;
@@ -419,20 +431,123 @@
   margin: 12px;
 }
 
-
-
 .product-stack {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 80%;
 }
 
-
-
-.position-center {
+/* .position-center {
   color: var(--primary-button-color);
+  /* justify-content: center; */
+/* } */ 
+
+
+/* Shoppingacrt section */
+
+
+
+
+
+
+.shoppingcart {
+  width: 100%;
+}
+
+
+.phoneimage {
+  width: 100%;
+  height: 10%;
+}
+
+.phoneimage img {
+  width: 100%;
+  height: 10%;
+}
+
+.cart-table {
+  width: 80%;
+}
+
+
+.shoppingcart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.shoppingcart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shoppingcart th, .shoppingcart td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.shoppingcart th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.shoppingcart tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.shoppingcart tr:hover {
+  background-color: #f1f1f1;
+}
+
+.shoppingcart img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+.shoppingcart button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.shoppingcart button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.shoppingcart button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.shoppingcart .back-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.shoppingcart .back-button:hover {
+  background-color: #218838;
+}
+
+.shoppingcart .quantity-control {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
+.shoppingcart .quantity-control button {
+  margin: 0 5px;
+}

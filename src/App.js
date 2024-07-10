@@ -1,30 +1,3 @@
-// import React, { useState } from "react";
-// import './App.css';
-// import Homescreen from './components/herosection/Homescreen';
-// import Phonecategory from "./components/phonecategory/Phonecategory";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-
-// export default function App() {
-//     const [selectedProduct, setSelectedProduct] = useState(null);
-
-//     const handleProductSelect = (product) => {
-//         setSelectedProduct(product);
-//     };
-
-//     return (
-//         <div className="App">
-//             <Navbar />
-//             {!selectedProduct ? (
-//                 <Homescreen onProductSelect={handleProductSelect} />
-//             ) : (
-//                 <Phonecategory selectedProduct={selectedProduct} onProductSelect={handleProductSelect} />
-//             )}
-//             <Footer />
-//         </div>
-//     );
-// }
-
 import React, { useState } from "react";
 import './App.css';
 import Homescreen from './components/herosection/Homescreen';
@@ -60,6 +33,7 @@ export default function App() {
     return (
         <div className="App">
             <Navbar />
+            <div className="mid--section">
             {view === "homescreen" && (
                 <Homescreen onProductSelect={handleProductSelect} />
             )}
@@ -69,7 +43,11 @@ export default function App() {
             {view === "shoppingcart" && (
                 <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} />
             )}
+            </div>
+           
             <Footer />
+            {/* <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} /> */}
+
         </div>
     );
 }
