@@ -27,13 +27,10 @@ export default function Phonecategory({ selectedProduct, onProductClick }) {
         </Flex>);
     const Pagenumbering = () => <Pagination defaultCurrent={6} total={500} className="position-center" />;
 
-    
-    // Filter products to display only those of the same category as selectedProduct
     const categoryProducts = products.filter(product =>
         product.category === selectedProduct.category && product.id !== selectedProduct.id
     ).slice(0, 5);
-
-    // Combine selectedProduct and categoryProducts
+    
     const displayProducts = [selectedProduct, ...categoryProducts];
 
     return (

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar";
 import Searchsection from "../herosection/Searchsection";
 import image12 from "../../assets/images/image 12.png"
 

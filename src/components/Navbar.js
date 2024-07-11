@@ -12,8 +12,10 @@ export default function Navbar(){
                         <p>Home</p>
                         <p>Products</p>
                         <p>Contact Us</p>
+                        <div className="nav--button">
+                            <button >Buy Now</button>
+                        </div>
                     </div>
-                    <div className="nav--button"><button >Buy Now</button></div>
             </div>
         </div>
        

@@ -2,9 +2,11 @@
   --primary-button-color: #9A28DF;
 }
 * {
-  border: 0px;
+  border: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin: 0px;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .App {
@@ -24,7 +26,6 @@
 .navbar {
   display: flex;
   flex-flow: row wrap;
-  /* height: 100px; */
   width: 100%;
   padding: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.6);
@@ -59,11 +60,7 @@
 
 
  .nav--button {
-  flex: 1;
-  flex-shrink: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 25%;
 
 }
 
@@ -77,9 +74,16 @@
 }
 
 /* herosection  */
+.homescreen {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+}
 
 .herosection {
   margin-bottom: 60px;
+  padding: 20px;
 } 
 
 .herosection--div {
@@ -90,7 +94,7 @@
 }
 
 .my--image {
-  width: 80%;
+  width: 90%;
 }
 
 .searchsection {
@@ -144,6 +148,8 @@
  width: 20%;
 }
 
+
+
 /* product section */
 .product-stack {
   background-color: #5f5a5a;
@@ -152,66 +158,62 @@
 }
 
 .products {
-  background-color: #F7F7F7;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  background-color: #F7F7F7;
+  width: 100%;
+  gap: 40px;
 }
 
+/* Let's see */
 .my--products {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-}
-
-.my--viewmore--button {
-  background-color: var(--primary-button-color);
-  justify-content: center;
-  height: 50px;
-  margin: 50px 20%;
-  width: 100%;
-  padding: 20px;
+  padding-top: 40px;
 }
 
 
-.product {
-  margin: 20px;
-}
-
-.product--list {
+ .product--list {
   position: relative;
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(54, 54, 54, 0.2);
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 400px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
 }
+
+
+.product--details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
 
 .product--image {
   width: 100%;
   height: 80%; 
   object-fit: cover; 
+  overflow: hidden;
 }
-
-.product--details {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40%; 
-  background-color: rgba(253, 252, 252, 0.5); 
-  color: #000;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 
 .product--details h3 {
   text-align: center;
+  margin-top: 0;
   font-size: 24px;
   padding: 8px;
 }
@@ -220,38 +222,41 @@
   font-size: 12px;
 }
 
-.product img{
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.product--inner {
+  justify-self: flex-end;
 }
 
-
-.product button {
-  background-color: #9A28DF;
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 4px;
+.product--details button {
+  background-color: var(--primary-button-color);
+  padding: 16px;
   color: white;
-  margin-left: 60%;
+  border-radius: 6px;
+  height: 48px;
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .viewbutton {
-  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 20px;
+  background-color: #F7F7F7;
+}
+.viewbutton button {
+  background-color: var(--primary-button-color);
+  color: white;
+  font-weight: bold;
+  width: 90%;
+  height: 60px;
+  border-radius: 8px;
+  font-size: larger;
 }
 
-.bigbutton {
-  background-color: var(--primary-button-color);
-  justify-content: center;
-  height: 60px;
-  width: 100%;
-  margin: 50px 20%;
-}
 
 /* footer section */
 
@@ -338,13 +343,8 @@
 }
 
 
-
-
 /* Phone Category Section */
 
-/* .homecategory {
-  display: block;
-} */
 
 .phonecategory {
   width: 100%;
@@ -439,17 +439,7 @@
   width: 80%;
 }
 
-/* .position-center {
-  color: var(--primary-button-color);
-  /* justify-content: center; */
-/* } */ 
-
-
 /* Shoppingacrt section */
-
-
-
-
 
 
 .shoppingcart {
@@ -538,9 +528,6 @@
   cursor: pointer;
 }
 
-.shoppingcart .back-button:hover {
-  background-color: #218838;
-}
 
 .shoppingcart .quantity-control {
   display: flex;
@@ -551,3 +538,13 @@
 .shoppingcart .quantity-control button {
   margin: 0 5px;
 }
+
+
+/* You can use margin doesn't mean you should use it. How do you handle overflows? If you need gap between elements in a 1-dimensional layout (row or column), use flex and apply gap. If  you need it in a 2-dimensional layout (grid), use grid and apply gap, row-gap, or column-gap. In some cases, you can use flex and flex-wrap for a 2-dimensional layout.
+When you have a non-scrollable container with rounded edges, if the container has a child element that potentially overflows, you don't have to give the child element a border radius too. You can simply put overflow: hidden; on the container and you'll have perfect rounded corners
+Colors should not be estimated. If your designer did #F5F5F5, don't estimate to light-gray
+Implement texts to detail: font-size, font-weight, line-height especially
+Please use correct spacing (as seen in your design). A 16px padding is not the same thing as 18px padding. Don't forget that paddings can add up in nested containers. Some designers suck, agreed. Some will say padding 11px like how??? why??? Fight your designer in this case, teach them to use consistent 4-multiple values for spacing
+Many people don't take the width of their desktop views seriously. Check the whole frame in your design and get the width of the content. The max-width of your page should be that:
+max-width: 1024px;
+margin: 0 auto; */

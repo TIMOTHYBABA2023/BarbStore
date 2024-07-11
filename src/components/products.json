@@ -1,7 +1,7 @@
 [
     {
         "id":"1",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 1 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -11,7 +11,7 @@
     },
     {
         "id":"2",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 1 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -21,7 +21,7 @@
     },
     {
         "id":"3",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 1 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -31,7 +31,7 @@
     },
     {
         "id":"4",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 1 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -41,7 +41,7 @@
     },
     {
         "id":"5",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 1 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -51,7 +51,7 @@
     },
     {
         "id":"6",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 1 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -61,7 +61,7 @@
     },
     {
         "id":"7",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 2 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -71,7 +71,7 @@
     },
     {
         "id":"8",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 2 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -81,7 +81,7 @@
     },
     {
         "id":"9",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 3 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -91,7 +91,7 @@
     },
     {
         "id":"10",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 2 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -101,7 +101,7 @@
     },
     {
         "id":"11",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 2 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -111,7 +111,7 @@
     },
     {
         "id":"12",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 2 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -121,7 +121,7 @@
     },
     {
         "id":"13",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 3 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -131,9 +131,9 @@
     },
     {
         "id":"14",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 3 PRO MAX",
         "category":"LAPTOPS",
-        "price":"12",
+        "price":"54",
         "rating":"",
         "quantity":"23" ,
         "shipping_price" :"2",
@@ -141,7 +141,7 @@
     },
     {
         "id":"15",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 3 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -151,7 +151,7 @@
     },
     {
         "id":"16",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 3 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -161,7 +161,7 @@
     },
     {
         "id":"17",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 3 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -171,7 +171,7 @@
     },
     {
         "id":"18",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 3 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -181,7 +181,7 @@
     },
     {
         "id":"19",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 4 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -191,7 +191,7 @@
     },
     {
         "id":"20",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 4 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -201,7 +201,7 @@
     },
     {
         "id":"21",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 4 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -211,7 +211,7 @@
     },
     {
         "id":"22",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 4 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -221,7 +221,7 @@
     },
     {
         "id":"23",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 4 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -231,7 +231,7 @@
     },
     {
         "id":"24",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 4 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -241,7 +241,7 @@
     },
     {
         "id":"25",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 5 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -251,7 +251,7 @@
     },
     {
         "id":"26",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 5 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -261,7 +261,7 @@
     },
     {
         "id":"27",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 5 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -271,7 +271,7 @@
     },
     {
         "id":"28",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 5 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -281,7 +281,7 @@
     },
     {
         "id":"29",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 5 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -291,7 +291,7 @@
     },
     {
         "id":"30",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 5 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -301,7 +301,7 @@
     },
     {
         "id":"31",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 6 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -311,7 +311,7 @@
     },
     {
         "id":"32",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 6 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -321,7 +321,7 @@
     },
     {
         "id":"33",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 6 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -331,7 +331,7 @@
     },
     {
         "id":"34",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 6 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -341,7 +341,7 @@
     },
     {
         "id":"35",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 6 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -351,7 +351,7 @@
     },
     {
         "id":"36",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 6 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",
@@ -361,7 +361,7 @@
     },
     {
         "id":"37",
-        "name":"iphone 14 PRO MAX",
+        "name":"iphone 7 PRO MAX",
         "category":"PHONES",
         "price":"12",
         "rating":"",
@@ -371,7 +371,7 @@
     },
     {
         "id":"38",
-        "name":"iphone 14 PRO MAX",
+        "name":"Laptop 7 PRO MAX",
         "category":"LAPTOPS",
         "price":"12",
         "rating":"",
@@ -381,7 +381,7 @@
     },
     {
         "id":"39",
-        "name":"iphone 14 PRO MAX",
+        "name":"Desktop 7 PRO MAX",
         "category":"DESKTOPS",
         "price":"12",
         "rating":"",
@@ -391,7 +391,7 @@
     },
     {
         "id":"40",
-        "name":"iphone 14 PRO MAX",
+        "name":"Tablet 7 PRO MAX",
         "category":"TABLETS",
         "price":"12",
         "rating":"",
@@ -401,7 +401,7 @@
     },
     {
         "id":"41",
-        "name":"iphone 14 PRO MAX",
+        "name":"Headphone 7 PRO MAX",
         "category":"HEADPHONES",
         "price":"12",
         "rating":"",
@@ -411,7 +411,7 @@
     },
     {
         "id":"42",
-        "name":"iphone 14 PRO MAX",
+        "name":"Mic 7 PRO MAX",
         "category":"MICROPHONES",
         "price":"12",
         "rating":"",

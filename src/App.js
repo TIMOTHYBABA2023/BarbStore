@@ -11,23 +11,20 @@ export default function App() {
     const [cart, setCart] = useState([]);
     const [view, setView] = useState("homescreen");
 
-    // Function to handle product selection from Homescreen
     const handleProductSelect = (product) => {
         setSelectedProduct(product);
-        setView("phonecategory"); // Navigate to Phonecategory after selecting product
+        setView("phonecategory"); 
     };
 
-    // Function to handle product selection from Phonecategory
     const handleProductClick = (product) => {
         setSelectedProduct(product);
-        setCart([...cart, { ...product, quantity: 1 }]); // Add selected product to cart with initial quantity
-        setView("shoppingcart"); // Navigate to Shoppingcart after selecting product
+        setCart([...cart, { ...product, quantity: 1 }]); 
+        setView("shoppingcart"); 
     };
 
-    // Function to reset selected product and view
     const handleBackToHome = () => {
         setSelectedProduct(null);
-        setView("homescreen"); // Navigate back to Homescreen
+        setView("homescreen"); 
     };
 
     return (
@@ -46,8 +43,8 @@ export default function App() {
             </div>
            
             <Footer />
-            {/* <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} /> */}
 
         </div>
     );
 }
+
