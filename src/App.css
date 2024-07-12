@@ -351,11 +351,12 @@
   display: flex;
   flex-flow: column wrap;
 }
+
+
 .phonesection {
   width: 100%;
-  display: flex;
-  flex-flow: column wrap;
 }
+
 
 .phonesection--div {
   background-image: url("../src/assets/images/products/phone.png");
@@ -369,6 +370,7 @@
   align-items: center;
 }
 
+
 .phonesection--div1 {
   display: flex;
   flex-flow: column wrap;
@@ -378,10 +380,10 @@
 }
 
 .search--div {
-  display: flex;
+  /* display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .phonesection--div1 h1{
@@ -538,6 +540,66 @@
 .shoppingcart .quantity-control button {
   margin: 0 5px;
 }
+
+.summary-card{
+  background-color: white;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  width: 60%;
+}
+
+
+.sum-card {
+  border-bottom: 1px solid black;
+  width: 90%;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-span {
+  margin-right: 60%;
+}
+
+.proceed-butt {
+  margin: 20px;
+}
+
+
+
+.proceed-button {
+  background-color: var(--primary-button-color);
+  border-radius: 4px;
+  width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* You can use margin doesn't mean you should use it. How do you handle overflows? If you need gap between elements in a 1-dimensional layout (row or column), use flex and apply gap. If  you need it in a 2-dimensional layout (grid), use grid and apply gap, row-gap, or column-gap. In some cases, you can use flex and flex-wrap for a 2-dimensional layout.

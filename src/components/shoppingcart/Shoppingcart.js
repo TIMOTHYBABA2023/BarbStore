@@ -63,7 +63,7 @@ export default function Shoppingcart({ cart, setCart, onBackToHome }) {
                         <table className="cart--table">
                             <thead>
                                 <tr>
-                                    <th>Product (image)</th>
+                                    <th>Product</th>
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
@@ -95,19 +95,21 @@ export default function Shoppingcart({ cart, setCart, onBackToHome }) {
                     )}
                     <div className="summary-card">
                         <h3>Cart Total</h3>
-                        <div>
-                            <span>Sub-total:</span>
-                            <span>${calculateTotal().subTotal}</span>
+                        <div className="sum-card">
+                            <span className="title-span">Sub-total:</span>
+                            <span className="bold">${calculateTotal().subTotal}</span>
                         </div>
-                        <div>
-                            <span>Shipping:</span>
-                            <span>${calculateTotal().shippingTotal}</span>
+                        <div className="sum-card">
+                            <span className="title-span">Shipping:</span>
+                            <span className="bold">${calculateTotal().shippingTotal}</span>
                         </div>
-                        <div>
-                            <span>Total:</span>
-                            <span>${calculateTotal().total}</span>
+                        <div className="sum-card">
+                            <span className="bold title-span">SUB-Total:</span>
+                            <span className="bold">${calculateTotal().total}</span>
                         </div>
-                        <button className="proceed-button" onClick={toggleCheckout}>Proceed to Checkout</button>
+                        <div className="proceed-butt">
+                            <button className="proceed-button" onClick={toggleCheckout}>Proceed to Checkout</button>
+                        </div>
                     </div>
                 </div>
             </div>
