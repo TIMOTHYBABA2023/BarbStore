@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import imagephone from "../../assets/images/products/phone 1.png";
 import deleteicon from "../../assets/images/delete.png";
-import Checkout from "../Checkout"; 
-import allproducts from "../categoryitems.json";
 
-export default function Shoppingcart({ cart, setCart, onBackToHome }) {
+
+export default function Shoppingcart({ cart, setCart, onBackToHome, onProceedToCheckout }) {
     const [showCheckout, setShowCheckout] = useState(false); 
 
     const handleRemove = (productId) => {
@@ -47,7 +46,7 @@ export default function Shoppingcart({ cart, setCart, onBackToHome }) {
     };
 
     const proceedToCheckout = () => {
-        console.log("Proceed to Checkout clicked!");
+        onProceedToCheckout();
     };
 
     return (
@@ -108,16 +107,12 @@ export default function Shoppingcart({ cart, setCart, onBackToHome }) {
                             <span className="bold">${calculateTotal().total}</span>
                         </div>
                         <div className="proceed-butt">
-                            <button className="proceed-button" onClick={toggleCheckout}>Proceed to Checkout</button>
+                            <button className="proceed-button" onClick={proceedToCheckout}>Proceed to Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
             <button onClick={onBackToHome}>Back to Home</button>
-
-            {showCheckout && (
-                <Checkout cart={cart} categories={allproducts.categories} />
-            )}
         </div>
     );
 }

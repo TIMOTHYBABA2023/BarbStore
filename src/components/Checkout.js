@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function Checkout({ cart, categories }) {
+export default function Checkout({ cart, categories = [] }) {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -88,7 +87,7 @@ export default function Checkout({ cart, categories }) {
                     <label htmlFor="email">Email Address*</label>
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
                 </div>
-                <div className="form-group">
+                <div className="form-group" style={{ gridColumn: '1 / -1' }}>
                     <label htmlFor="notes">Other Notes</label>
                     <textarea id="notes" name="notes" value={formData.notes} onChange={handleChange}></textarea>
                 </div>
@@ -134,6 +133,4 @@ export default function Checkout({ cart, categories }) {
             </div>
         </div>
     );
-};
-
-
+}

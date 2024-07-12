@@ -3,8 +3,10 @@ import './App.css';
 import Homescreen from './components/herosection/Homescreen';
 import Phonecategory from "./components/phonecategory/Phonecategory";
 import Shoppingcart from "./components/shoppingcart/Shoppingcart";
+import Checkout from "./components/Checkout"; // Import Checkout component
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import allproducts from "./components/categoryitems.json"; // Import the JSON file
 
 export default function App() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -27,24 +29,28 @@ export default function App() {
         setView("homescreen"); 
     };
 
+    const handleProceedToCheckout = () => {
+        setView("checkout");
+    };
+
     return (
         <div className="App">
             <Navbar />
             <div className="mid--section">
-            {view === "homescreen" && (
-                <Homescreen onProductSelect={handleProductSelect} />
-            )}
-            {view === "phonecategory" && (
-                <Phonecategory selectedProduct={selectedProduct} onProductClick={handleProductClick} />
-            )}
-            {view === "shoppingcart" && (
-                <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} />
-            )}
+                {view === "homescreen" && (
+                    <Homescreen onProductSelect={handleProductSelect} />
+                )}
+                {view === "phonecategory" && (
+                    <Phonecategory selectedProduct={selectedProduct} onProductClick={handleProductClick} />
+                )}
+                {view === "shoppingcart" && (
+                    <Shoppingcart cart={cart} setCart={setCart} onBackToHome={handleBackToHome} onProceedToCheckout={handleProceedToCheckout} />
+                )}
+                {view === "checkout" && (
+                    <Checkout cart={cart} categories={allproducts.categories} />
+                )}
             </div>
-           
             <Footer />
-
         </div>
     );
 }
-
