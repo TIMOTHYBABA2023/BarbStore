@@ -1,423 +1,330 @@
 [
     {
         "id":"1",
-        "name":"iphone 1 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 1.png"
+        "name":"Air Jordan 6",
+        "category": "men",
+        "images": [
+            {
+                "id":"1",
+                "price":"$120",
+                "quantity":"5" ,
+                "image": "shoe 1 white.jpg",
+                "image_review": "shoe 1 white review.jpg",
+                "color": "WMNS Gold Hoops"
+            },
+            {
+                "id":"2",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"shoe 1 bordeaux.jpg",
+                "image_review": "shoe 1 bordeaux review.jpg",
+                "color":"WMNS Gold Hoops"
+            },
+            {
+                "id":"3",
+                "price":"$102",
+                "quantity":"5" ,
+                "image":"shoe 1 roc.jpg",
+                "image_review": "shoe 1 roc review.jpg",
+                "color":"WMNS Gold Hoops" 
+            },
+            {
+                "id":"4",
+                "price":"$2",
+                "quantity":"5" ,
+                "image":"shoe 1 mo.jpg",
+                "image_review": "shoe 1 mo review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "men" 
+            },
+            {
+                "id":"5",
+                "price":"$20",
+                "quantity":"5" ,
+                "image":"shoe 1 cny.jpg",
+                "image_review": "shoe 1 cny review.jpg",
+                "color":"CNY",
+                "category": "women" 
+            },
+            {
+                "id":"6",
+                "price":"$40",
+                "quantity":"5" ,
+                "image":"shoe 1 pfj.jpg",
+                "image_review": "shoe 1 pfj review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children"  
+            },
+            {
+                "id":"7",
+                "price":"$80",
+                "quantity":"5" ,
+                "image":"shoe 1 sb.jpg",
+                "image_review": "shoe 1 fb review.jpg",
+                "color":"CNY",
+                "category": "men" 
+            }
+           
+        ]   
     },
     {
         "id":"2",
-        "name":"Laptop 1 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
+        "name":"AA",
+        
+        "images": [
+            {
+                "id":"9",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"aa11.jpg",
+                "image_review": "aa12.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "women"
+            },
+            {
+               "id":"8",
+                "price":"$120",
+                "quantity":"5" ,
+                "image": "aa21.jpg",
+                "image_review": "aa22.jpg",
+                "color": "WMNS Gold Hoops",
+                "category": "men"  
+            }
+        ]   
     },
     {
         "id":"3",
-        "name":"Desktop 1 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
+        "name":"Air Jordan 6",
+        "category": "children",
+        
+        "images": [
+            {
+               "id":"17",
+                "price":"$102",
+                "quantity":"5" ,
+                "image":"ab11.jpg",
+                "image_review": "ab12.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children"
+            },
+            {
+                "id":"16",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"ab21.jpg",
+                "image_review": "ab22.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "women" 
+            }
+        ]   
     },
     {
         "id":"4",
-        "name":"Tablet 1 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
+        "name":"Air Jordan 6",
+        
+        "images": [
+            {
+                "id":"25",
+                "price":"$2",
+                "quantity":"5" ,
+                "image":"shoe 1 mo.jpg",
+                "image_review": "shoe 1 mo review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "men"
+            },
+            {
+                "id":"23",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"shoe 1 bordeaux.jpg",
+                "image_review": "shoe 1 bordeaux review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "women" 
+            },
+            {
+                "id":"24",
+                "price":"$102",
+                "quantity":"5" ,
+                "image":"shoe 1 roc.jpg",
+                "image_review": "shoe 1 roc review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children" 
+            },
+            {
+                "id":"22",
+                "price":"$120",
+                "quantity":"5" ,
+                "image": "shoe 1 white.jpg",
+                "image_review": "shoe 1 white review.jpg",
+                "color": "WMNS Gold Hoops",
+                "category": "men"
+                
+            },
+            {
+                "id":"26",
+                "price":"$20",
+                "quantity":"5" ,
+                "image":"shoe 1 cny.jpg",
+                "image_review": "shoe 1 cny review.jpg",
+                "color":"CNY",
+                "category": "women" 
+            },
+            {
+                "id":"27",
+                "price":"$40",
+                "quantity":"5" ,
+                "image":"shoe 1 pfj.jpg",
+                "image_review": "shoe 1 pfj review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children"  
+            },
+            {
+                "id":"28",
+                "price":"$80",
+                "quantity":"5" ,
+                "image":"shoe 1 sb.jpg",
+                "image_review": "shoe 1 fb review.jpg",
+                "color":"CNY",
+                "category": "men" 
+            }
+           
+        ]   
     },
     {
         "id":"5",
-        "name":"Headphone 1 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
+        "name":"Air Jordan 6",
+        
+        "images": [
+            {
+                "id":"33",
+                "price":"$20",
+                "quantity":"5" ,
+                "image":"shoe 1 cny.jpg",
+                "image_review": "shoe 1 cny review.jpg",
+                "color":"CNY",
+                "category": "women" 
+            },
+            {
+                "id":"30",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"shoe 1 bordeaux.jpg",
+                "image_review": "shoe 1 bordeaux review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "women" 
+            },
+            {
+                "id":"31",
+                "price":"$102",
+                "quantity":"5" ,
+                "image":"shoe 1 roc.jpg",
+                "image_review": "shoe 1 roc review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children" 
+            },
+            {
+                "id":"32",
+                "price":"$2",
+                "quantity":"5" ,
+                "image":"shoe 1 mo.jpg",
+                "image_review": "shoe 1 mo review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "men" 
+            },
+            {
+               "id":"29",
+                "price":"$120",
+                "quantity":"5" ,
+                "image": "shoe 1 white.jpg",
+                "image_review": "shoe 1 white review.jpg",
+                "color": "WMNS Gold Hoops",
+                "category": "men"
+            },
+            {
+                "id":"34",
+                "price":"$40",
+                "quantity":"5" ,
+                "image":"shoe 1 pfj.jpg",
+                "image_review": "shoe 1 pfj review.jpg",
+                "color":"WMNS Gold Hoops",
+                "category": "children"  
+            },
+            {
+                "id":"35",
+                "price":"$80",
+                "quantity":"5" ,
+                "image":"shoe 1 sb.jpg",
+                "image_review": "shoe 1 fb review.jpg",
+                "color":"CNY",
+                "category": "men" 
+            }
+           
+        ]   
     },
     {
         "id":"6",
-        "name":"Mic 1 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"7",
-        "name":"iphone 2 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 2.png"
-    },
-    {
-        "id":"8",
-        "name":"Laptop 2 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"9",
-        "name":"Desktop 3 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"10",
-        "name":"Tablet 2 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"11",
-        "name":"Headphone 2 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"12",
-        "name":"Mic 2 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"13",
-        "name":"iphone 3 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 3.png"
-    },
-    {
-        "id":"14",
-        "name":"Laptop 3 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"54",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"15",
-        "name":"Desktop 3 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"16",
-        "name":"Tablet 3 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"17",
-        "name":"Headphone 3 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"18",
-        "name":"Mic 3 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"19",
-        "name":"iphone 4 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 4.png"
-    },
-    {
-        "id":"20",
-        "name":"Laptop 4 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"21",
-        "name":"Desktop 4 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"22",
-        "name":"Tablet 4 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"23",
-        "name":"Headphone 4 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"24",
-        "name":"Mic 4 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"25",
-        "name":"iphone 5 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 5.png"
-    },
-    {
-        "id":"26",
-        "name":"Laptop 5 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"27",
-        "name":"Desktop 5 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"28",
-        "name":"Tablet 5 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"29",
-        "name":"Headphone 5 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"30",
-        "name":"Mic 5 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"31",
-        "name":"iphone 6 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 1.png"
-    },
-    {
-        "id":"32",
-        "name":"Laptop 6 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"33",
-        "name":"Desktop 6 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"34",
-        "name":"Tablet 6 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"35",
-        "name":"Headphone 6 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"36",
-        "name":"Mic 6 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
-    },
-    {
-        "id":"37",
-        "name":"iphone 7 PRO MAX",
-        "category":"PHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"phone 1.png"
-    },
-    {
-        "id":"38",
-        "name":"Laptop 7 PRO MAX",
-        "category":"LAPTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"laptop 1.png"
-    },
-    {
-        "id":"39",
-        "name":"Desktop 7 PRO MAX",
-        "category":"DESKTOPS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"desktop 1.png"
-    },
-    {
-        "id":"40",
-        "name":"Tablet 7 PRO MAX",
-        "category":"TABLETS",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"tablet 1.png"
-    },
-    {
-        "id":"41",
-        "name":"Headphone 7 PRO MAX",
-        "category":"HEADPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"headphone 1.png"
-    },
-    {
-        "id":"42",
-        "name":"Mic 7 PRO MAX",
-        "category":"MICROPHONES",
-        "price":"12",
-        "rating":"",
-        "quantity":"23" ,
-        "shipping_price" :"2",
-        "image":"mic 1.png"
+        "name":"Air Jordan 6",
+        "category": "children",
+        
+        "images": [
+            {
+                "id":"42",
+                "price":"$80",
+                "quantity":"5" ,
+                "image":"shoe 1 sb.jpg",
+                "image_review": "shoe 1 fb review.jpg",
+                "color":"CNY"
+            },
+            {
+                "id":"37",
+                "price":"$15",
+                "quantity":"5" ,
+                "image":"shoe 1 bordeaux.jpg",
+                "image_review": "shoe 1 bordeaux review.jpg",
+                "color":"WMNS Gold Hoops"
+            },
+            {
+                "id":"38",
+                "price":"$102",
+                "quantity":"5" ,
+                "image":"shoe 1 roc.jpg",
+                "image_review": "shoe 1 roc review.jpg",
+                "color":"WMNS Gold Hoops"
+            },
+            {
+                "id":"39",
+                "price":"$2",
+                "quantity":"5" ,
+                "image":"shoe 1 mo.jpg",
+                "image_review": "shoe 1 mo review.jpg",
+                "color":"WMNS Gold Hoops"
+            },
+            {
+                "id":"40",
+                "price":"$20",
+                "quantity":"5" ,
+                "image":"shoe 1 cny.jpg",
+                "image_review": "shoe 1 cny review.jpg",
+                "color":"CNY"
+            },
+            {
+                "id":"41",
+                "price":"$40",
+                "quantity":"5" ,
+                "image":"shoe 1 pfj.jpg",
+                "image_review": "shoe 1 pfj review.jpg",
+                "color":"WMNS Gold Hoops" 
+            },
+            {
+                "id":"36",
+                "price":"$120",
+                "quantity":"5" ,
+                "image": "shoe 1 white.jpg",
+                "image_review": "shoe 1 white review.jpg",
+                "color": "WMNS Gold Hoops"
+             
+            }
+           
+        ]   
     }
-    
 ]

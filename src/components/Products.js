@@ -1,34 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import products from "./products.json";
+import image_12 from "../assets/images/products/image 12.jpg";
 
-export default function Products({ onProductSelect }) {
-    const uniqueCategories = products.reduce((acc, product) => {
-        if (!acc.some(item => item.category === product.category)) {
-            acc.push(product);
-        }
-        return acc;
-    }, []);
+export default function Products({ onProductClick }) {
+  const [randomProducts, setRandomProducts] = useState([]);
 
-    const handleProductClick = (product) => {
-        if (typeof onProductSelect === 'function') {
-            onProductSelect(product);
-        } else {
-            console.error("onProductSelect is not a function");
-        }
-    };
+  useEffect(() => {
+    const shuffledProducts = [...products].sort(() => 0.5 - Math.random());
+    setRandomProducts(shuffledProducts);
+  }, []);
 
-    const storeproductgotten = uniqueCategories.map(product => (
-        <div key={product.id} className="product-item" onClick={() => handleProductClick(product)}>
-            <Product {...product} />
-        </div>
-    ));
-
-    return (
-        <div className="products">
-            <div className="my--products">
-                {storeproductgotten}
-            </div>
-        </div>
-    );
+  return (
+    <div className="products">
+      <div className="home-div">
+        <img src={image_12} alt="homepage pic" />
+      </div>
+      {randomProducts.map((product) => (
+        <Product key={product.id} product={product} onClick={() => onProductClick(product)} />
+      ))}
+    </div>
+  );
 }

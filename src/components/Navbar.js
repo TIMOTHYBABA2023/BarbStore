@@ -1,23 +1,24 @@
 import React from "react"
-import logo from "../assets/images/logo.png"
 
 export default function Navbar(){
     return (
-        <div className="navbar"> 
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="navbar--div">
-                    <div className="navbar--img">
-                        <img  src={logo} alt="Logo" />
+                    <div className="navbar--logo">
+                        <h3>Barb Show</h3>
                     </div>
-                    <div className="nav--text">
-                        <p>Home</p>
-                        <p>Products</p>
-                        <p>Contact Us</p>
+                    <div className="nav--ref">
+                        <div  className="nav--links">
+                            <a href="/">Home</a>
+                            <a href="/">Products</a>
+                            <a href="/">Contact Us</a>
+                        </div>
                         <div className="nav--button">
-                            <button >Buy Now</button>
+                                <button >Buy Now</button>
                         </div>
                     </div>
+                   
             </div>
-        </div>
-       
+        </nav>       
     )
 }

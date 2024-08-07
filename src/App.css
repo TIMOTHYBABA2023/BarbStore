@@ -1,15 +1,16 @@
 :root {
   --primary-button-color: #9A28DF;
 }
+
 * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 1024px;
-  margin: 0 auto;
 }
 
 .App {
+  display: flex;
+  flex-flow: column;
   width: 100%;
 }
 
@@ -19,242 +20,51 @@
 
 .herosection {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
 }
 
 /* navbar section */
 .navbar {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 100px;
   padding: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-  
 }
 
 .navbar--div {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  width: 90%;
+  width: 100%;
 }
 
-.navbar--div img {
-  width: 16%;
-}
-
-
-
- .navbar--img { 
+ .navbar--logo { 
   flex: 1; 
-  margin: 20px 40px; 
 }  
 
- .nav--text {
-  flex: 2;
-  display: flex;
-  align-items: center;
+ .nav--ref {
+  flex: 7;
+  display: flex; 
   justify-content: space-around;
-  
-} 
-
-
- .nav--button {
-  width: 25%;
-
+  align-items: center;
 }
 
- .nav--button button, .search--div button{
+ .nav--links {
+  flex: 2;
+  display: flex; 
+  justify-content: space-around;
+  align-items: center;
+}
+
+ .nav--button button{
+  flex: 1;
   height: 40px;
   background-color: #9A28DF;
-  padding: 4px;
-  width: 40%;
-  border-radius: 4px;
-  color: white;
-}
-
-/* herosection  */
-.homescreen {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-.herosection {
-  margin-bottom: 60px;
-  padding: 20px;
-} 
-
-.herosection--div {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.my--image {
-  width: 90%;
-}
-
-.searchsection {
-  display: flex;
-  flex-flow: column wrap;
-  justify-self: center;
-  margin: 20px;
-  gap: 12px;
-}
-
-.search--text {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-.search--text h2 {
-  width: 35%;
-  text-align: center;
-  margin-bottom: 22px;
-}
-.search--text {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.search--container {
-  margin: 12px;
-  width: 100%;
-}
-
-.search--div {
-   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.search--div input{
-  border: 1px solid #000000;
-  margin-right: 8px;
-  width: 50%;
-  height: 36px;
-  border-radius: 4px;
-}
-
-.search--div button{
- padding: 4px 12px;
- width: 20%;
-}
-
-
-
-/* product section */
-.product-stack {
-  background-color: #5f5a5a;
-  margin: 20px;
-  width: 100%;
-}
-
-.products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #F7F7F7;
-  width: 100%;
-  gap: 40px;
-}
-
-/* Let's see */
-.my--products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
-}
-
-
- .product--list {
-  position: relative;
-  width: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 400px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-
-.product--details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-
-
-.product--image {
-  width: 100%;
-  height: 80%; 
-  object-fit: cover; 
-  overflow: hidden;
-}
-
-.product--details h3 {
-  text-align: center;
-  margin-top: 0;
-  font-size: 24px;
   padding: 8px;
-}
-
-.product--details p {
-  font-size: 12px;
-}
-
-.product--inner {
-  justify-self: flex-end;
-}
-
-.product--details button {
-  background-color: var(--primary-button-color);
-  padding: 16px;
+  border-radius: 4px;
   color: white;
-  border-radius: 6px;
-  height: 48px;
-}
-
-.bold {
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.viewbutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  background-color: #F7F7F7;
-}
-.viewbutton button {
-  background-color: var(--primary-button-color);
-  color: white;
-  font-weight: bold;
-  width: 90%;
-  height: 60px;
-  border-radius: 8px;
-  font-size: larger;
 }
 
 
@@ -315,7 +125,7 @@
   display: flex;
   flex-flow: column wrap;
   gap: 10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .company h2{
@@ -331,10 +141,7 @@
 .copyright {
   border-top: 1px solid black;
   width: 80%;
-}
-
-
-.copyright--div {
+  padding-top: 8px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -342,347 +149,192 @@
   margin: 20px;
 }
 
+.copyright--div{
+  /* justify-self: self-start; */
+  align-self: self-start;
+}
 
-/* Phone Category Section */
 
 
-.phonecategory {
-  width: 100%;
+
+/* Homepage */
+
+
+.home-div {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.home-div img {
+  width: 80%;
+}
+
+
+
+/* product section */
+
+.products-col{
   display: flex;
   flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #F7F7F7;
+}
+.products {
+  background-color: #c2c0c0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  gap: 40px;
 }
 
 
-.phonesection {
-  width: 100%;
-}
-
-
-.phonesection--div {
-  background-image: url("../src/assets/images/products/phone.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 17%;
+.product--div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
   height: 300px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product--div:hover {
+  transform: scale(1.2);
 }
 
 
-.phonesection--div1 {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.search--div {
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center; */
-}
-
-.phonesection--div1 h1{
-  font-size: 8em;
-}
-
-.phonesection--div1 input{
-  background-color: transparent;
-  border: 1px solid white;
-  width: 60%;
-}
-
-.category-products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.phonecatalog {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.product-display, .phonecategory {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+.product--div img {
+  position: absolute;
   width: 100%;
+  height: 70%;
 }
 
 
-.selected--product {
-  display: flex;
-  flex-flow: row wrap; 
-  width: 80%;
-}
 
-.phone--sec {
+
+/* ProductPreview */
+
+.product--details {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-}
-
-.demo {
-  align-self: center;
-  margin: 12px;
-}
-
-.product-stack {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-}
-
-/* Shoppingacrt section */
-
-
-.shoppingcart {
-  width: 100%;
-}
-
-
-.phoneimage {
-  width: 100%;
-  height: 10%;
-}
-
-.phoneimage img {
-  width: 100%;
-  height: 10%;
-}
-
-.cart-table {
-  width: 80%;
-}
-
-
-.shoppingcart h2 {
+  height: 40%;
+  padding-top: 36px;
+  background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.shoppingcart table {
-  width: 100%;
-  border-collapse: collapse;
+
+.product-preview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.shoppingcart th, .shoppingcart td {
+.preview--img {
+  width: 50%;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.preview--img img {
+  width: 80%;
+  height: 400px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.preview--details {
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.colors--section {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.thumbnail-list img {
+  cursor: pointer;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+  border-radius: 5px;
+  transition: transform 0.5s, border-color 0.2s;
 }
 
-.shoppingcart th {
-  background-color: #f4f4f4;
-  font-weight: bold;
+.thumbnail-list img:hover {
+  transform: scale(1.1);
+  border-color: #333;
 }
 
-.shoppingcart tr:nth-child(even) {
+
+.adminlogin {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #e8cff7;
+}
+
+.adminlogin--form {
+  /* width: 40%; */
+  height: 12em;
+}
+
+
+/* styles.css */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   background-color: #f9f9f9;
 }
 
-.shoppingcart tr:hover {
-  background-color: #f1f1f1;
+form div {
+  margin-bottom: 15px;
 }
 
-.shoppingcart img {
-  width: 50px;
-  height: auto;
-  object-fit: cover;
-}
-
-.shoppingcart button {
-  padding: 5px 10px;
-  margin: 2px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-.shoppingcart button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.shoppingcart button:hover:not(:disabled) {
-  background-color: #0056b3;
-}
-
-.shoppingcart .back-button {
+label {
   display: block;
-  width: fit-content;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
+  margin-bottom: 5px;
 }
 
-
-.shoppingcart .quantity-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.shoppingcart .quantity-control button {
-  margin: 0 5px;
-}
-
-.summary-card{
-  background-color: white;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 80px;
-  width: 60%;
-}
-
-
-.sum-card {
-  border-bottom: 1px solid black;
-  width: 90%;
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.title-span {
-  margin-right: 60%;
-}
-
-.proceed-butt {
-  margin: 20px;
-}
-
-.proceed-button {
-  background-color: var(--primary-button-color);
-  border-radius: 4px;
+input[type="text"],
+input[type="password"],
+input[type="file"] {
   width: 100%;
-
+  padding: 8px;
+  box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
-
-.checkout {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 2rem;
-}
-
-.checkout form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 2rem;
-}
-
-.checkout .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.checkout .form-group label {
-  margin-bottom: 0.5rem;
-}
-
-.checkout .form-group input,
-.checkout .form-group textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.checkout .form-group textarea {
-  resize: vertical;
-}
-
-.checkout button[type="submit"] {
-  grid-column: 1 / -1;
-  padding: 1rem;
+button {
+  padding: 10px 20px;
   background-color: #007bff;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
-.checkout button[type="submit"]:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-.order-summary, .payment-options {
-  margin-top: 2rem;
-}
-
-.total-to-pay {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.payment-options .card-options img {
-  width: 50px;
-  margin-right: 1rem;
-}
-
-.payment-options .payment-methods label {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.payment-options .payment-methods input[type="radio"] {
-  margin-right: 0.5rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* You can use margin doesn't mean you should use it. How do you handle overflows? If you need gap between elements in a 1-dimensional layout (row or column), use flex and apply gap. If  you need it in a 2-dimensional layout (grid), use grid and apply gap, row-gap, or column-gap. In some cases, you can use flex and flex-wrap for a 2-dimensional layout.
-When you have a non-scrollable container with rounded edges, if the container has a child element that potentially overflows, you don't have to give the child element a border radius too. You can simply put overflow: hidden; on the container and you'll have perfect rounded corners
-Colors should not be estimated. If your designer did #F5F5F5, don't estimate to light-gray
-Implement texts to detail: font-size, font-weight, line-height especially
-Please use correct spacing (as seen in your design). A 16px padding is not the same thing as 18px padding. Don't forget that paddings can add up in nested containers. Some designers suck, agreed. Some will say padding 11px like how??? why??? Fight your designer in this case, teach them to use consistent 4-multiple values for spacing
-Many people don't take the width of their desktop views seriously. Check the whole frame in your design and get the width of the content. The max-width of your page should be that:
-max-width: 1024px;
-margin: 0 auto; */
