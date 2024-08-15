@@ -27,14 +27,14 @@ export default function Footer(){
                                 <h2>Contact Us</h2>
                                 <div className="address--icon">
                                 <img src={locationicon} alt="" />
-                                <p>5, Awolowo Road, Ikoyi, Lagos, Nigeria.</p>
+                                <p>3rd Mainland, Kosofe, Lagos, Nigeria.</p>
                             </div>
                         
                             <div className="address--icon">
                                 <img src={phoneicon} alt="" />
                                 <div>
-                                    <div>+234 905 612 5571</div>
-                                    <div>+234 912 759 0356</div>
+                                    <div>+234 905 612 0000</div>
+                                    <div>+234 912 000 0356</div>
                                 </div>
                                 
                             </div>

@@ -187,7 +187,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 48px 24px;
   gap: 40px;
 }
 
@@ -234,6 +234,8 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  height: 500px;
+  margin-bottom: 48px;
 }
 
 .preview--img {
@@ -293,7 +295,6 @@
 }
 
 .adminlogin--form {
-  /* width: 40%; */
   height: 12em;
 }
 
@@ -338,3 +339,21 @@ button:hover {
   background-color: #0056b3;
 }
 
+.addProductForm {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.adminPage {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin--page {
+  width: 95%;
+  display: flex;
+  flex-flow: column wrap;
+}

@@ -1,27 +1,67 @@
 import React, { useState, useEffect } from "react";
-import products from "./products.json";
-import images from "./imageHelper";
+import { Button } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
-export default function ProductPreview({ productId }) {
+export default function ProductPreview({ productId, addToCart }) {
   const [product, setProduct] = useState(null);
   const [previewImage, setPreviewImage] = useState("");
   const [permanentImage, setPermanentImage] = useState("");
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [currentPrice, setCurrentPrice] = useState("");
+  const [currentId, setCurrentId] = useState("");
 
   useEffect(() => {
-    const foundProduct = products.find((prod) => prod.id === productId);
-    setProduct(foundProduct);
-    if (foundProduct) {
-      setPermanentImage(images[foundProduct.images[0].image_review]);
-      setPreviewImage(images[foundProduct.images[0].image_review]);
-    }
+    const fetchProductData = async () => {
+      try {
+        // Fetch the selected product details
+        const response = await fetch(`http://localhost:9999/api/v1/products/products/${productId}`);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setProduct(data);
+        const productImageUrl = `http://localhost:9999/previewImages/${data.imageReviewUrl}`;
+        setPermanentImage(productImageUrl);
+        setPreviewImage(productImageUrl);
+        setCurrentPrice(data.price);
+        setCurrentId(data.id);
+
+        // Fetch related products
+        const relatedResponse = await fetch('http://localhost:9999/api/v1/products/products');
+        if (!relatedResponse.ok) throw new Error('Network response was not ok');
+        const products = await relatedResponse.json();
+        const sameNameProducts = products.filter(
+          prod => prod.name === data.name && prod.id !== productId
+        );
+        // Include the selected product at the start of the list
+        setRelatedProducts([data, ...sameNameProducts]);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProductData();
   }, [productId]);
 
-  const handleThumbnailHover = (imageReview) => {
-    setPreviewImage(images[imageReview]);
+  const handleThumbnailHover = (imageReviewUrl) => {
+    setPreviewImage(imageReviewUrl);
   };
 
-  const handleThumbnailClick = (imageReview) => {
-    setPermanentImage(images[imageReview]);
+  const handleThumbnailClick = (imageReviewUrl, product) => {
+    setPermanentImage(imageReviewUrl);
+    setPreviewImage(imageReviewUrl);
+    setCurrentPrice(product.price);
+    setCurrentId(product.id);
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        image: permanentImage,
+        price: currentPrice,
+        quantity: 1,
+      });
+    }
   };
 
   if (!product) {
@@ -39,24 +79,45 @@ export default function ProductPreview({ productId }) {
         )}
       </div>
       <div className="preview--details">
-        <h2>{product.name}</h2>
-        <p>Price: {product.images[0].price}</p>
-        <p>ID: {product.id}</p>
+        <div className="details-header">
+          <h2>{product.name}</h2>
+          <p>Price: {currentPrice}</p>
+          <p>ID: {currentId}</p>
+
+          {/* Add the Sizes Available Section */}
+          <div className="sizes--section">
+            <h3>Sizes Available:</h3>
+            <div className="thumbnail-list">
+              {product.sizes?.map((size, index) => (
+                <div key={index} className="thumbnail-item">
+                  <Button type="default">{size}</Button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="colors--section">
           <h2>Colors Available:</h2>
           <div className="thumbnail-list">
-            {product.images.map((img, index) => (
-              <img
+            {relatedProducts.map((prod, index) => (
+              <div
                 key={index}
-                src={images[img.image]}
-                alt={`${product.name} ${index}`}
-                onMouseEnter={() => handleThumbnailHover(img.image_review)}
+                className="thumbnail-item"
+                onMouseEnter={() => handleThumbnailHover(`http://localhost:9999/previewImages/${prod.imageReviewUrl}`)}
                 onMouseLeave={() => setPreviewImage(permanentImage)}
-                onClick={() => handleThumbnailClick(img.image_review)}
-              />
+                onClick={() => handleThumbnailClick(`http://localhost:9999/previewImages/${prod.imageReviewUrl}`, prod)}
+              >
+                <img
+                  src={`http://localhost:9999/images/${prod.imageUrl}`}
+                  alt={`${prod.name} ${index}`}
+                />
+              </div>
             ))}
           </div>
         </div>
+        <Button type="primary" onClick={handleAddToCart} icon={<ShoppingCartOutlined />}>
+          Add to Cart
+        </Button>
       </div>
     </div>
   );

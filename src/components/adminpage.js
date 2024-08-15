@@ -1,126 +1,409 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Table, Button, Modal, message, Checkbox } from "antd";
 
-export default function AdminPage() {
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [product, setProduct] = useState({
-        id: '',
-        name: '',
-        category: '',
-        images: []
-    });
-    const [imageFiles, setImageFiles] = useState([]);
-    const [imageReviewFiles, setImageReviewFiles] = useState([]);
+const AdminPage = () => {
+  const [products, setProducts] = useState([]);
+  const [isAdding, setIsAdding] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    productId: "",
+    price: "",
+    quantity: "",
+    color: "",
+    sizes: [],
+    productImage: null,
+    previewImage: null,
+  });
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        if (username === 'admin' && password === 'admin') {
-            setLoggedIn(true);
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = () => {
+    fetch("http://localhost:9999/api/v1/products/products")
+      .then(response => response.json())
+      .then(responseData => {
+        if (Array.isArray(responseData)) {
+          setProducts(responseData);
         } else {
-            alert('Invalid credentials');
+          console.error("Expected an array in response data but got:", responseData);
         }
-    };
+      })
+      .catch(error => console.error("Error fetching products:", error));
+  };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setProduct({ ...product, [name]: value });
-    };
+  const handleAddProduct = () => {
+    setFormData({
+      name: "",
+      category: "",
+      productId: "",
+      price: "",
+      quantity: "",
+      color: "",
+      sizes: [],
+      productImage: null,
+      previewImage: null,
+    });
+    setIsAdding(true);
+  };
 
-    const handleImageUpload = (e) => {
-        setImageFiles([...e.target.files]);
-    };
+  const handleCancel = () => {
+    setIsAdding(false);
+    setIsEditing(false);
+    setEditingProduct(null);
+  };
 
-    const handleImageReviewUpload = (e) => {
-        setImageReviewFiles([...e.target.files]);
-    };
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
-    const handleAddImage = () => {
-        const images = product.images.concat({
-            id: (product.images.length + 1).toString(),
-            price: '',
-            quantity: '',
-            image: imageFiles[0] ? imageFiles[0].name : '',
-            image_review: imageReviewFiles[0] ? imageReviewFiles[0].name : '',
-            color: '',
-            category: ''
-        });
-        setProduct({ ...product, images });
-    };
+  const handleSizeCheckboxChange = checkedValues => {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      sizes: checkedValues,
+    }));
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(product);
-    };
+  const handleFileChange = e => {
+    const { name, files } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: files[0],
+    }));
+  };
 
-    if (!loggedIn) {
-        return (
-            <div className='adminlogin'>
-                <h2>Admin Login</h2>
-                <form onSubmit={handleLogin}>
-                    <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Username"
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        );
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
 
-    return (
+    const formDataObj = new FormData();
+    Object.keys(formData).forEach(key => {
+      if (key === "sizes") {
+        formDataObj.append(key, formData[key].join(","));
+      } else if (formData[key] !== null) {
+        formDataObj.append(key, formData[key]);
+      }
+    });
+
+    fetch("http://localhost:9999/api/v1/products/addProduct", {
+      method: "POST",
+      body: formDataObj,
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.httpStatus === "OK") {
+          message.success(data.message);
+          handleCancel();
+          fetchProducts();
+        } else {
+          message.error(data.message || "Failed to add product");
+        }
+      })
+      .catch(error => {
+        console.error("Error adding product:", error);
+        message.error("Failed to add product");
+      });
+  };
+
+  const handleEdit = product => {
+    setEditingProduct(product);
+    setFormData({
+      name: product.name || "",
+      category: product.category || "",
+      productId: product.productId || "",
+      price: product.price || "",
+      quantity: product.quantity || "",
+      color: product.color || "",
+      sizes: product.sizes || [],
+      productImage: null,
+      previewImage: null,
+    });
+    setIsEditing(true);
+  };
+
+  const handleEditSubmit = e => {
+    e.preventDefault();
+
+    const formDataObj = new FormData();
+    Object.keys(formData).forEach(key => {
+      if (key === "sizes") {
+        formDataObj.append(key, formData[key].join(","));
+      } else if (formData[key] !== null) {
+        formDataObj.append(key, formData[key]);
+      }
+    });
+
+    fetch(`http://localhost:9999/api/v1/products/editProduct/${editingProduct.id}`, {
+      method: "PUT",
+      body: formDataObj,
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.httpStatus === "OK") {
+          message.success(data.message);
+          handleCancel();
+          fetchProducts();
+        } else {
+          message.error(data.message || "Failed to update product");
+        }
+      })
+      .catch(error => {
+        console.error("Error updating product:", error);
+        message.error("Failed to update product");
+      });
+  };
+
+  const handleDelete = id => {
+    fetch(`http://localhost:9999/api/v1/products/deleteProduct/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.httpStatus === "OK") {
+          message.success(data.message);
+          fetchProducts();
+        } else {
+          message.error(data.message || "Failed to delete product");
+        }
+      })
+      .catch(error => {
+        console.error("Error deleting product:", error);
+        message.error("Failed to delete product");
+      });
+  };
+
+  const handleToggleHide = (id, currentHideStatus) => {
+    fetch(`http://localhost:9999/api/v1/products/hideProduct/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ hideProduct: !currentHideStatus }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.httpStatus === "OK") {
+          message.success(`Product is now ${!currentHideStatus ? "hidden" : "visible"}`);
+          fetchProducts();
+        } else {
+          message.error(data.message || "Failed to toggle product visibility");
+        }
+      })
+      .catch(error => {
+        console.error("Error toggling product visibility:", error);
+        message.error("Failed to toggle product visibility");
+      });
+  };
+
+  const columns = [
+    {
+      title: "Image",
+      dataIndex: "imageUrl",
+      key: "imageUrl",
+      render: (text, record) =>
+        record.imageUrl ? (
+          <img
+            src={`http://localhost:9999/images/${record.imageUrl}`}
+            alt={record.name}
+            width="100"
+          />
+        ) : (
+          <span>No Image</span>
+        ),
+    },
+    {
+      title: "Preview Image",
+      dataIndex: "imageReviewUrl",
+      key: "imageReviewUrl",
+      render: (text, record) =>
+        record.imageReviewUrl ? (
+          <img
+            src={`http://localhost:9999/previewImages/${record.imageReviewUrl}`}
+            alt={`${record.name} Preview`}
+            width="100"
+          />
+        ) : (
+          <span>No Preview</span>
+        ),
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Category",
+      dataIndex: "category",
+      key: "category",
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+    },
+    {
+      title: "Stock remaining",
+      dataIndex: "quantity",
+      key: "quantity",
+    },
+    {
+      title: "Color",
+      dataIndex: "color",
+      key: "color",
+    },
+    {
+      title: "Actions",
+      key: "actions",
+      render: (text, record) => (
         <div>
-            <h2>Admin Page</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="id"
-                    value={product.id}
-                    onChange={handleInputChange}
-                    placeholder="Product ID"
-                />
-                <input
-                    type="text"
-                    name="name"
-                    value={product.name}
-                    onChange={handleInputChange}
-                    placeholder="Product Name"
-                />
-                <input
-                    type="text"
-                    name="category"
-                    value={product.category}
-                    onChange={handleInputChange}
-                    placeholder="Category"
-                />
-                <input type="file" multiple onChange={handleImageUpload} />
-                <input type="file" multiple onChange={handleImageReviewUpload} />
-                <button type="button" onClick={handleAddImage}>Add Image</button>
-                <button type="submit">Submit</button>
-            </form>
-            <div>
-                <h3>Product Images</h3>
-                <ul>
-                    {product.images.map((img, index) => (
-                        <li key={index}>
-                            <p>Image: {img.image}</p>
-                            <p>Review Image: {img.image_review}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+          <Button type="primary" onClick={() => handleEdit(record)}>
+            Edit
+          </Button>
+          <Button
+            type="danger"
+            onClick={() => handleDelete(record.id)}
+            style={{ marginLeft: "10px" }}
+          >
+            Delete
+          </Button>
+          <Button
+            onClick={() => handleToggleHide(record.id, record.hideProduct)}
+            style={{ marginLeft: "10px" }}
+          >
+            {record.hideProduct ? "Unhide" : "Hide"}
+          </Button>
         </div>
-    );
-}
+      ),
+    },
+  ];
 
+  const sizeOptions = [
+    { label: "12", value: "12" },
+    { label: "15", value: "15" },
+    { label: "30", value: "30" },
+    { label: "35", value: "35" },
+    { label: "45", value: "45" },
+  ];
+
+  return (
+    <div className="adminPage">
+    <div className="admin--page">
+      <h1>Product List</h1>
+      <Button type="primary" onClick={handleAddProduct}>
+        Add Product
+      </Button>
+      <Table dataSource={products} columns={columns} rowKey="id" />
+      <Modal
+        title={isEditing ? "Edit Product" : "Add Product"}
+        open={isAdding || isEditing}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
+          <div>
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Category:</label>
+            <input
+              type="text"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Product ID:</label>
+            <input
+              type="text"
+              name="productId"
+              value={formData.productId}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Price:</label>
+            <input
+              type="number"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Quantity:</label>
+            <input
+              type="number"
+              name="quantity"
+              value={formData.quantity}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Color:</label>
+            <input
+              type="text"
+              name="color"
+              value={formData.color}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Sizes:</label>
+            <Checkbox.Group
+              options={sizeOptions}
+              value={formData.sizes}
+              onChange={handleSizeCheckboxChange}
+            />
+          </div>
+          <div>
+            <label>Product Image:</label>
+            <input
+              type="file"
+              name="productImage"
+              onChange={handleFileChange}
+              accept="image/*"
+            />
+          </div>
+          <div>
+            <label>Preview Image:</label>
+            <input
+              type="file"
+              name="previewImage"
+              onChange={handleFileChange}
+              accept="image/*"
+            />
+          </div>
+          <Button type="primary" htmlType="submit">
+            {isEditing ? "Update Product" : "Add Product"}
+          </Button>
+        </form>
+      </Modal>
+    </div>
+    </div>
+  );
+};
+
+export default AdminPage;
 
