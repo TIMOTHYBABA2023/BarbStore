@@ -3,7 +3,7 @@ import React from "react";
 export default function Product({ product, onClick }) {
   const { imageUrl, name, color, price } = product;
 
-  const productImage = `http://localhost:9999/images/${imageUrl}`;
+  const productImage = `https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/images/${imageUrl}`;
 
   return (
     <div className="product--div" onClick={onClick}>

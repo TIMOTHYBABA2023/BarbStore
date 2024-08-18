@@ -161,7 +161,7 @@ export default function AdminPage(){
   };
 
   const handleDelete = id => {
-    fetch(`/api/v1/products/deleteProduct/${id}`, {
+    fetch(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/deleteProduct/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -213,7 +213,7 @@ export default function AdminPage(){
       render: (text, record) =>
         record.imageUrl ? (
           <img
-            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/images/${record.imageUrl}`}
+            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/images/${record.imageUrl}`}
             alt={record.name}
             width="100"
           />
@@ -228,7 +228,7 @@ export default function AdminPage(){
       render: (text, record) =>
         record.imageReviewUrl ? (
           <img
-            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/${record.imageReviewUrl}`}
+            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/previewImages/${record.imageReviewUrl}`}
             alt={`${record.name} Preview`}
             width="100"
           />

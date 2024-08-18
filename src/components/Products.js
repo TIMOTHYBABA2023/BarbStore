@@ -7,7 +7,7 @@ export default function Products({ onProductClick }) {
 
   useEffect(() => {
     
-    fetch('http://localhost:9999/api/v1/products/products')
+    fetch('https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/products')
       .then(response => response.json())
       .then(data => {
         

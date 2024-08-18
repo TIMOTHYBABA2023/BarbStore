@@ -14,18 +14,18 @@ export default function ProductPreview({ productId, addToCart }) {
     const fetchProductData = async () => {
       try {
         // Fetch the selected product details
-        const response = await fetch(`http://localhost:9999/api/v1/products/products/${productId}`);
+        const response = await fetch(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/products/${productId}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         setProduct(data);
-        const productImageUrl = `http://localhost:9999/previewImages/${data.imageReviewUrl}`;
+        const productImageUrl = `https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/previewImages/${data.imageReviewUrl}`;
         setPermanentImage(productImageUrl);
         setPreviewImage(productImageUrl);
         setCurrentPrice(data.price);
         setCurrentId(data.id);
 
         // Fetch related products
-        const relatedResponse = await fetch('http://localhost:9999/api/v1/products/products');
+        const relatedResponse = await fetch('https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/products');
         if (!relatedResponse.ok) throw new Error('Network response was not ok');
         const products = await relatedResponse.json();
         const sameNameProducts = products.filter(
@@ -103,12 +103,12 @@ export default function ProductPreview({ productId, addToCart }) {
               <div
                 key={index}
                 className="thumbnail-item"
-                onMouseEnter={() => handleThumbnailHover(`http://localhost:9999/previewImages/${prod.imageReviewUrl}`)}
+                onMouseEnter={() => handleThumbnailHover(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/previewImages/${prod.imageReviewUrl}`)}
                 onMouseLeave={() => setPreviewImage(permanentImage)}
-                onClick={() => handleThumbnailClick(`http://localhost:9999/previewImages/${prod.imageReviewUrl}`, prod)}
+                onClick={() => handleThumbnailClick(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/previewImages/${prod.imageReviewUrl}`, prod)}
               >
                 <img
-                  src={`http://localhost:9999/images/${prod.imageUrl}`}
+                  src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/images/${prod.imageUrl}`}
                   alt={`${prod.name} ${index}`}
                 />
               </div>
