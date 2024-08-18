@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Modal, message, Checkbox } from "antd";
 
-const AdminPage = () => {
+export default function AdminPage(){
+
   const [products, setProducts] = useState([]);
   const [isAdding, setIsAdding] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -23,7 +24,7 @@ const AdminPage = () => {
   }, []);
 
   const fetchProducts = () => {
-    fetch("http://localhost:9999/api/v1/products/products")
+    fetch("https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/products")
       .then(response => response.json())
       .then(responseData => {
         if (Array.isArray(responseData)) {
@@ -91,7 +92,7 @@ const AdminPage = () => {
       }
     });
 
-    fetch("http://localhost:9999/api/v1/products/addProduct", {
+    fetch("https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/addProduct", {
       method: "POST",
       body: formDataObj,
     })
@@ -139,7 +140,7 @@ const AdminPage = () => {
       }
     });
 
-    fetch(`http://localhost:9999/api/v1/products/editProduct/${editingProduct.id}`, {
+    fetch(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/editProduct/${editingProduct.id}`, {
       method: "PUT",
       body: formDataObj,
     })
@@ -160,7 +161,7 @@ const AdminPage = () => {
   };
 
   const handleDelete = id => {
-    fetch(`http://localhost:9999/api/v1/products/deleteProduct/${id}`, {
+    fetch(`/api/v1/products/deleteProduct/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -182,7 +183,7 @@ const AdminPage = () => {
   };
 
   const handleToggleHide = (id, currentHideStatus) => {
-    fetch(`http://localhost:9999/api/v1/products/hideProduct/${id}`, {
+    fetch(`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/hideProduct/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -212,7 +213,7 @@ const AdminPage = () => {
       render: (text, record) =>
         record.imageUrl ? (
           <img
-            src={`http://localhost:9999/images/${record.imageUrl}`}
+            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/images/${record.imageUrl}`}
             alt={record.name}
             width="100"
           />
@@ -227,7 +228,7 @@ const AdminPage = () => {
       render: (text, record) =>
         record.imageReviewUrl ? (
           <img
-            src={`http://localhost:9999/previewImages/${record.imageReviewUrl}`}
+            src={`https://app-store-dva8g4chd9hjhtbn.eastus-01.azurewebsites.net/api/v1/products/${record.imageReviewUrl}`}
             alt={`${record.name} Preview`}
             width="100"
           />
@@ -403,7 +404,7 @@ const AdminPage = () => {
     </div>
     </div>
   );
-};
 
-export default AdminPage;
+
+}
 
